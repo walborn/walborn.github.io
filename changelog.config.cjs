@@ -15,8 +15,8 @@ module.exports = {
     },
     ci: {
       description: 'CI related changes',
-      emoji: '♾️',
-      value: 'ci/cd',
+      emoji: '🚀',
+      value: 'ci',
     },
     docs: {
       description: 'Documentation only changes',
@@ -35,7 +35,7 @@ module.exports = {
     },
     perf: {
       description: 'A code change that improves performance',
-      emoji: '🚀',
+      emoji: '🦄',
       value: 'perf',
     },
     refactor: {
