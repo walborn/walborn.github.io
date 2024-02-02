@@ -12,8 +12,8 @@ const resume: Resume = {
   name: 'Южаков Борис',
   birthday: new Date(1986, 10, 29),
   hello: `
-     Я во фронте 8 лет, а может больше. Фанат React и TS. Работал в стартапе, маленькой компании и в большой корпорации. Писал приложения под большую нагрузку и быстрый time to market.
-    Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме`,
+    Я во фронте больше 8 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.
+    Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.`,
   contacts: [
     { name: 'email', icon: <img src={EmailSVG} className={styles.icon} alt="Email" />, value: 'yuzhakov.boris@gmail.com', link: 'mailto:yuzhakov.boris@gmail.com' },
     { name: 'telegram', icon: <img src={TelegramSVG} className={styles.icon} alt="Telegram" />, value: 't.me/codebor', link: 'https://t.me/codebor' },
