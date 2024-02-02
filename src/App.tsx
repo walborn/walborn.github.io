@@ -56,7 +56,7 @@ function App() {
       <div className={styles.col2}>
         <div className={styles.hello}>
           <h2>Привет! 👋</h2>
-          {resume.hello}
+          {resume.hello.map(i => <div>{i}</div>)}
         </div>
         <div className={styles.contacts}>
           <h2>Контакты</h2>

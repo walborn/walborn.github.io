@@ -34,7 +34,7 @@ export interface Resume {
   position: string
   name: string
   birthday: Date
-  hello: React.ReactNode
+  hello: React.ReactNode[]
   contacts: { name: string, value: string, link: string, icon: React.ReactNode }[]
   skills: string[]
   languages: { name: React.ReactNode, value: React.ReactNode }[]
