@@ -120,10 +120,19 @@ function App() {
       }
       <h2>Образование</h2>
       <ul>
-        {resume.educations.map(edu => (
+        {resume.educations.map(({ period, link, value }) => (
           <li className={styles.edu}>
-            <div className={styles.period}>{periodYears(edu.period)}</div>
-            <a href={edu.link}>{edu.value}</a>
+            <div className={styles.period}>{periodYears(period)}</div>
+            <a href={link}>{value}</a>
+          </li>
+        ))}
+      </ul>
+      <h2>Курсы</h2>
+      <ul>
+        {resume.courses.map(({ period, link, value }) => (
+          <li className={styles.edu}>
+            <div className={styles.period}>{periodYears(period)}</div>
+            <a href={link}>{value}</a>
           </li>
         ))}
       </ul>

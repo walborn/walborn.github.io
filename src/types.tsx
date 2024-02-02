@@ -15,7 +15,7 @@ type Experience = {
   position: string
   period: Period,
   responsibilities: string[]
-  achivements: string[]
+  achivements: React.ReactNode[]
   stack: string[]
   projects: Project[]
 }
@@ -40,6 +40,7 @@ export interface Resume {
   languages: { name: React.ReactNode, value: React.ReactNode }[]
   experiences: Experience[]
   educations: Education[]
+  courses: Education[]
   publications: Publication[]
   about: string
 }
