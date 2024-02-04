@@ -26,7 +26,7 @@ const formatter = new Intl.DateTimeFormat('ru', { year: 'numeric', month: '2-dig
 
 const periodMonths = ({ from, to }: Period) => [
   formatter.format(from),
-  to ? formatter.format(to) : 'сейчас',
+  to ? formatter.format(to) : 'по настоящее время',
 ].filter(Boolean).join(' - ')
 
 const periodformatDuration = ({ from, to }: Period) => formatDuration(diffMonths(from, to || new Date()))
@@ -91,7 +91,8 @@ function App() {
       {
         resume.experiences.map(work => (
           <section className={styles.work}>
-            <h3>{work.name}</h3>
+            <h3 className={styles.name}>{work.name}</h3>
+            <div className={styles.position}>{work.position}</div>
             <div className={styles.description}>{work.description}</div>
             <h3 className={styles.period}>{periodMonths(work.period)}</h3>
             <div className={clsx(styles.code, styles.duration)}>{periodformatDuration(work.period)}</div>

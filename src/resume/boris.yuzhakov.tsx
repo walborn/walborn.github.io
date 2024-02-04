@@ -33,7 +33,7 @@ const resume: Resume = {
     {
       name: <a href="https://www.sibur.digital/">Sibur Digital</a>,
       description: 'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
-      position: 'frontend developer',
+      position: 'Frontend developer',
       period: { from: new Date(2020, 8) },
       responsibilities: [
         'Разработка приложений для работы с BigData',
@@ -55,7 +55,7 @@ const resume: Resume = {
     {
       name: <a href="https://www.linkedin.com/company/altarix/">Altarix</a>,
       description: 'Компания, занимающаяся городскими сервисами, использующими BigData',
-      position: 'frontend teamlead',
+      position: 'Frontend teamlead',
       period: { from: new Date(2016, 5), to: new Date(2020, 8) },
       responsibilities: [
         'Управление командой 3+ человек',
