@@ -10,7 +10,7 @@ import { Resume } from 'src/types'
 const resume: Resume = {
   position: 'Frontend developer | React',
   name: 'Южаков Борис',
-  birthday: new Date(1986, 10, 29),
+  birthday: new Date(1991, 3, 16),
   hello: [
     'Я во фронте больше 8 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.',
     'Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.',
@@ -78,9 +78,9 @@ const resume: Resume = {
   ],
   educations: [
     {
-      period: { from: new Date(2005,9), to: new Date(2014,6) },
+      period: { from: new Date(2010,9), to: new Date(2019,6) },
       link: 'https://mipt.ru/education/departments/fivt.php',
-      value: 'Факультет инноваций и высоких технологи - МФТИ',
+      value: 'Факультет инноваций и высоких технологий - МФТИ',
     },
 
   ],
