@@ -10,7 +10,7 @@ import { Resume } from 'src/types'
 const resume: Resume = {
   position: 'Frontend developer | React',
   name: 'Южаков Борис',
-  birthday: new Date(1991, 3, 16),
+  birthday: new Date(1986, 9, 29),
   hello: [
     'Я во фронте больше 8 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.',
     'Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.',
@@ -34,7 +34,7 @@ const resume: Resume = {
       name: <a href="https://www.sibur.digital/">Sibur Digital</a>,
       description: 'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
       position: 'Frontend developer',
-      period: { from: new Date(2020, 8) },
+      period: { from: new Date(2020, 7) },
       responsibilities: [
         'Разработка приложений для работы с BigData',
         'Участие в создании внутреннего UI Kit',
@@ -56,7 +56,7 @@ const resume: Resume = {
       name: <a href="https://www.linkedin.com/company/altarix/">Altarix</a>,
       description: 'Компания, занимающаяся городскими сервисами, использующими BigData',
       position: 'Frontend teamlead',
-      period: { from: new Date(2016, 5), to: new Date(2020, 8) },
+      period: { from: new Date(2016, 4), to: new Date(2020, 7) },
       responsibilities: [
         'Управление командой 3+ человек',
         'Создание макетов в Figma (пользуясь наработками штатных дизайнеров)',
@@ -78,7 +78,7 @@ const resume: Resume = {
   ],
   educations: [
     {
-      period: { from: new Date(2010,9), to: new Date(2019,6) },
+      period: { from: new Date(2010, 8), to: new Date(2019, 7) },
       link: 'https://mipt.ru/education/departments/fivt.php',
       value: 'Факультет инноваций и высоких технологий - МФТИ',
     },
@@ -86,12 +86,12 @@ const resume: Resume = {
   ],
   courses: [
     {
-      period: { from: new Date(2022,2), to: new Date(2022,4) },
+      period: { from: new Date(2022, 1), to: new Date(2022, 3) },
       link: 'https://practicum.yandex.ru/promo/mentors-school',
       value: 'Школа менторов - Yandex Practicum',
     },
     {
-      period: { from: new Date(2021,8), to: new Date(2022,2) },
+      period: { from: new Date(2021, 7), to: new Date(2022, 1) },
       link: 'https://yandex.ru/yaintern/schools/frontend',
       value: 'Школа разработки интерфейсов - Яндекс',
     },
