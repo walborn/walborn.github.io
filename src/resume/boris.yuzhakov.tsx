@@ -12,7 +12,7 @@ const resume: Resume = {
   name: 'Южаков Борис',
   birthday: new Date(1986, 9, 29),
   hello: [
-    'Я во фронте больше 8 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.',
+    'Я во фронте больше 9 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.',
     'Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.',
   ],
   contacts: [
@@ -31,10 +31,56 @@ const resume: Resume = {
   ],
   experiences: [
     {
+      name: <a href="https://latech.ru">Lamoda Tech</a>,
+      description: 'HR Tech подразделение компании Lamoda',
+      position: 'Старший разработчик категории 1',
+      period: { from: new Date(2025, 0) },
+      responsibilities: [
+        'Выбор техстека и разработка сервисов с нуля',
+        'Настройка CI/CD для новых сервисов (Gitlab CI)',
+        'Участвовал в проработке дизайна новых сервисов',
+        'Разработка внутренней дизайн системы',
+        'Проводил ревью кода',
+        'Лидерство команды из 3 фронтенд разработчиков',
+      ],
+      achivements: [
+        'Выпустили приложения для Грузии, Армении и Бразилии',
+        'Доработал приложения для Африки и Боливии',
+      ],
+      stack: [ 'TS', 'Tanstack Start', 'Tanstack Query', 'ReactJS', 'Zustand', 'Vite', 'Jest', 'Playwright', 'Storybook' ],
+      projects: [
+        { name: 'Lanet', value: 'Интранет' },
+        { name: 'Talent Management System (TMS)', value: 'Ревью сотрудников' },
+        { name: 'Resource Risk', value: 'Внутренняя аналитика для эйчаров' },
+      ],
+    },
+    {
+      name: <a href="https://eda.yandex.ru/">Yandex</a>,
+      description: 'Международная Яндекс Еда',
+      position: 'Старший разработчик интерфейсов',
+      period: { from: new Date(2024, 3), to: new Date(2025, 0) },
+      responsibilities: [
+        'Разрабатывал приложение для логирования',
+        'Участвовал в разработке внутренней дизайн системы',
+        'Проводил ревью кода',
+        'Участвовал в составлении задач для YCup',
+      ],
+      achivements: [
+        'Выпустили приложения для Грузии, Армении и Бразилии',
+        'Доработал приложения для Африки и Боливии',
+      ],
+      stack: [ 'TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook' ],
+      projects: [
+        { name: 'Menu.am', value: 'Яндекс еда для Армении' },
+        { name: 'Yandex Food', value: 'Яндекс еда для Грузии' },
+        { name: 'Yango', value: 'Встроенная Яндекс еда в приложение аналог yandex.go для Африки' },
+      ],
+    },
+    {
       name: <a href="https://www.sibur.digital/">Sibur Digital</a>,
       description: 'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
       position: 'Frontend developer',
-      period: { from: new Date(2020, 7) },
+      period: { from: new Date(2020, 7), to: new Date(2024,3) },
       responsibilities: [
         'Разработка приложений для работы с BigData',
         'Участие в создании внутреннего UI Kit',
