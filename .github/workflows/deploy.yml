@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages 🚀
 
 on:
   push:
-    branches: [master] 
+    branches: [master]
 
 permissions:
   contents: read
@@ -23,29 +23,13 @@ jobs:
       - name: Setup Bun 🍥
         uses: ./.github/actions/setup-bun 
 
-      - name: Create .env.production
-        run: |
-          cat << "EOF" > .env.production
-            NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL }}
-            NEXT_PUBLIC_YANDEX_MAPS_API_KEY=${{ secrets.NEXT_PUBLIC_YANDEX_MAPS_API_KEY }}
-            GOOGLE_VERIFICATION_CODE=${{ secrets.GOOGLE_VERIFICATION_CODE }}
-          EOF
-
-      - name: Cache Next.js build ⚡
-        id: cache_next
-        uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}
-          restore-keys: ${{ runner.os }}-nextjs-
-
-      - name: Build with Next.js 🏗️
-        run: bun next build
+      - name: Build with Vite 🏗️
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   deploy:
     environment:
