@@ -4,9 +4,11 @@ import LinkedinSVG from 'src/assets/contacts/linkedin.svg'
 import PhoneSVG from 'src/assets/contacts/phone.svg'
 import TelegramSVG from 'src/assets/contacts/telegram.svg'
 import styles from 'src/index.module.scss'
-import { Resume } from 'src/types'
+import type { Resume } from 'src/types'
 
-{/* eslint-disable max-len */}
+{
+  /* eslint-disable max-len */
+}
 const resume: Resume = {
   position: 'Frontend developer | React',
   name: 'Южаков Борис',
@@ -16,17 +18,94 @@ const resume: Resume = {
     'Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.',
   ],
   contacts: [
-    { name: 'email', icon: <img src={EmailSVG} className={styles.icon} alt="Email" />, value: 'yuzhakov.boris@gmail.com', link: 'mailto:yuzhakov.boris@gmail.com' },
-    { name: 'telegram', icon: <img src={TelegramSVG} className={styles.icon} alt="Telegram" />, value: 't.me/codebor', link: 'https://t.me/codebor' },
-    { name: 'linkedin', icon: <img src={LinkedinSVG} className={styles.icon} alt="Linkedin" />, value: 'linkedin.com/in/codebor', link: 'https://linkedin.com/in/codebor' },
-    { name: 'github', icon: <img src={GithubSVG} className={styles.icon} alt="Github" />, value: 'github.com/walborn', link: 'https://github.com/walborn' },
-    { name: 'phone', icon: <img src={PhoneSVG} className={styles.icon} alt="Phone" />, value: '+79250579756', link: 'tel:+79250579756' },
+    {
+      name: 'email',
+      icon: (
+        <img
+          src={EmailSVG}
+          className={styles.icon}
+          alt="Email"
+        />
+      ),
+      value: 'yuzhakov.boris@gmail.com',
+      link: 'mailto:yuzhakov.boris@gmail.com',
+    },
+    {
+      name: 'telegram',
+      icon: (
+        <img
+          src={TelegramSVG}
+          className={styles.icon}
+          alt="Telegram"
+        />
+      ),
+      value: 't.me/codebor',
+      link: 'https://t.me/codebor',
+    },
+    {
+      name: 'linkedin',
+      icon: (
+        <img
+          src={LinkedinSVG}
+          className={styles.icon}
+          alt="Linkedin"
+        />
+      ),
+      value: 'linkedin.com/in/codebor',
+      link: 'https://linkedin.com/in/codebor',
+    },
+    {
+      name: 'github',
+      icon: (
+        <img
+          src={GithubSVG}
+          className={styles.icon}
+          alt="Github"
+        />
+      ),
+      value: 'github.com/walborn',
+      link: 'https://github.com/walborn',
+    },
+    {
+      name: 'phone',
+      icon: (
+        <img
+          src={PhoneSVG}
+          className={styles.icon}
+          alt="Phone"
+        />
+      ),
+      value: '+79250579756',
+      link: 'tel:+79250579756',
+    },
   ],
-  skills: [ 'TypeScript', 'React', 'NextJS', 'Redux', 'Redux Toolkit', 'React Query', 'GraphQL', 'SCSS', 'Sass', 'TailwindCSS', 'Webpack', 'Vite', 'Figma', 'PWA', 'Storybook', 'Jest', 'Docker' ],
+  skills: [
+    'TypeScript',
+    'React',
+    'NextJS',
+    'Redux',
+    'Redux Toolkit',
+    'React Query',
+    'GraphQL',
+    'SCSS',
+    'Sass',
+    'TailwindCSS',
+    'Webpack',
+    'Vite',
+    'Figma',
+    'PWA',
+    'Storybook',
+    'Jest',
+    'Docker',
+  ],
   languages: [
     {
       name: 'Английский 🇬🇧',
-      value: <div>Intermediate <div className={styles.code}>B1</div></div>,
+      value: (
+        <div>
+          Intermediate <div className={styles.code}>B1</div>
+        </div>
+      ),
     },
   ],
   experiences: [
@@ -47,7 +126,17 @@ const resume: Resume = {
         'Выпустили приложения для Грузии, Армении и Бразилии',
         'Доработал приложения для Африки и Боливии',
       ],
-      stack: [ 'TS', 'Tanstack Start', 'Tanstack Query', 'ReactJS', 'Zustand', 'Vite', 'Jest', 'Playwright', 'Storybook' ],
+      stack: [
+        'TS',
+        'Tanstack Start',
+        'Tanstack Query',
+        'ReactJS',
+        'Zustand',
+        'Vite',
+        'Jest',
+        'Playwright',
+        'Storybook',
+      ],
       projects: [
         { name: 'Lanet', value: 'Интранет' },
         { name: 'Talent Management System (TMS)', value: 'Ревью сотрудников' },
@@ -69,7 +158,7 @@ const resume: Resume = {
         'Выпустили приложения для Грузии, Армении и Бразилии',
         'Доработал приложения для Африки и Боливии',
       ],
-      stack: [ 'TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook' ],
+      stack: ['TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook'],
       projects: [
         { name: 'Menu.am', value: 'Яндекс еда для Армении' },
         { name: 'Yandex Food', value: 'Яндекс еда для Грузии' },
@@ -78,9 +167,10 @@ const resume: Resume = {
     },
     {
       name: <a href="https://www.sibur.digital/">Sibur Digital</a>,
-      description: 'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
+      description:
+        'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
       position: 'Frontend developer',
-      period: { from: new Date(2020, 7), to: new Date(2024,3) },
+      period: { from: new Date(2020, 7), to: new Date(2024, 3) },
       responsibilities: [
         'Разработка приложений для работы с BigData',
         'Участие в создании внутреннего UI Kit',
@@ -88,14 +178,24 @@ const resume: Resume = {
         'Проведение интервью',
       ],
       achivements: [
-        <div>Запустил с нуля два успешных проекта <s>и один неуспешный</s></div>,
+        <div>
+          Запустил с нуля два успешных проекта <s>и один неуспешный</s>
+        </div>,
         'Затащил Vite во все проекты, сильно ускорив работу приложений',
         'Провёл более 30 собеседований с кандидатами',
       ],
-      stack: [ 'TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook' ],
+      stack: ['TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook'],
       projects: [
-        { name: 'kalancha', value: 'сервис нотификации, который слушает события из кафки, анализирует их и, в случае проблем, отправляет пользователю сообщения через различные каналы (sms, email, jira)' },
-        { name: 'mlfw', value: '(Machine Learning FrameWork) - веб интерфейс для API, который помогает управляться с моделями машинного обучения (просмотр, история, создание, загрузка, запуск, удаление и т. д.)' }, 
+        {
+          name: 'kalancha',
+          value:
+            'сервис нотификации, который слушает события из кафки, анализирует их и, в случае проблем, отправляет пользователю сообщения через различные каналы (sms, email, jira)',
+        },
+        {
+          name: 'mlfw',
+          value:
+            '(Machine Learning FrameWork) - веб интерфейс для API, который помогает управляться с моделями машинного обучения (просмотр, история, создание, загрузка, запуск, удаление и т. д.)',
+        },
       ],
     },
     {
@@ -115,7 +215,16 @@ const resume: Resume = {
         'Затащил TypeScript в проект',
         'Провёл более 50 интервью с кандидатами',
       ],
-      stack: [ 'TS', 'ReactJS', 'NextJS', 'Redux (Redux-Thunk, Reselect)', 'Sass', 'Кастомная UI-система', 'Jest', 'Storybook' ],
+      stack: [
+        'TS',
+        'ReactJS',
+        'NextJS',
+        'Redux (Redux-Thunk, Reselect)',
+        'Sass',
+        'Кастомная UI-система',
+        'Jest',
+        'Storybook',
+      ],
       projects: [
         { name: 'pcs', value: 'Сервис персональных коммуникаций (email, sms, web)' },
         { name: 'lendings', value: 'Различного рода лендинги' },
@@ -128,7 +237,6 @@ const resume: Resume = {
       link: 'https://mipt.ru/education/departments/fivt.php',
       value: 'Факультет инноваций и высоких технологий - МФТИ',
     },
-
   ],
   courses: [
     {

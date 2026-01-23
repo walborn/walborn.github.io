@@ -7,19 +7,10 @@
 
 
 # Installatin
-> We use yarn cos it is faster and nicer than npm
+> We use bun cos it is faster and nicer than npm
 ```bash
-> yarn && yarn dev
-```
-
-# Eslint
-Fix eslint errors in all files src/*
-```bash
-> npx eslint --fix src
-```
-# TypeScript
-```bash
-> tsc --noEmit
+> bun install
+> bun dev
 ```
 
 # Commiting
@@ -27,7 +18,7 @@ Fix eslint errors in all files src/*
 
 If you don't have, install commitizen globally
 ```
-> npm install --global commitizen
+> bun install --global commitizen
 ```
 Then you can use this command to create a new commit
 ```

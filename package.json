@@ -1,7 +1,7 @@
 {
   "name": "walborn",
   "private": true,
-  "homepage": "https://walborn.github.io/walborn/",
+  "homepage": "https://walborn.github.io",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -16,28 +16,28 @@
     }
   },
   "dependencies": {
-    "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.55.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "git-cz": "^4.9.0",
-    "sass": "^1.70.0",
-    "stylelint": "^16.2.1",
-    "stylelint-config-css-modules": "^4.4.0",
-    "stylelint-config-recommended": "^14.0.0",
+    "sass": "^1.97.3",
+    "stylelint": "^16.26.1",
+    "stylelint-config-css-modules": "^4.6.0",
+    "stylelint-config-recommended": "^14.0.1",
     "stylelint-order": "^6.0.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8",
-    "vite-plugin-svgr": "^4.2.0"
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
