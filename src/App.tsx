@@ -5,10 +5,14 @@ import resume from 'src/resume/boris.yuzhakov'
 import { Resume, Period } from 'src/types'
 import { declOfNum, diffMonths, formatDuration } from 'src/utils'
 
-
 const birthday = (value: Date) => {
   const diff = Math.abs(new Date(Date.now() - value.getTime()).getUTCFullYear() - 1970)
-  return <div>{new Intl.DateTimeFormat('ru').format(value)} ({diff} {declOfNum(diff, [ 'год', 'года', 'лет' ])})</div>
+  return (
+    <div>
+      {new Intl.DateTimeFormat('ru').format(value)} ({diff}{' '}
+      {declOfNum(diff, ['год', 'года', 'лет'])})
+    </div>
+  )
 }
 
 const experience = (periods: Resume['experiences']) => {
@@ -20,23 +24,21 @@ const experience = (periods: Resume['experiences']) => {
   return formatDuration(months)
 }
 
-
-
 const formatter = new Intl.DateTimeFormat('ru', { year: 'numeric', month: '2-digit' })
 
-const periodMonths = ({ from, to }: Period) => [
-  formatter.format(from),
-  to ? formatter.format(to) : 'по настоящее время',
-].filter(Boolean).join(' - ')
+const periodMonths = ({ from, to }: Period) =>
+  [formatter.format(from), to ? formatter.format(to) : 'по настоящее время']
+    .filter(Boolean)
+    .join(' - ')
 
-const periodformatDuration = ({ from, to }: Period) => formatDuration(diffMonths(from, to || new Date()))
+const periodformatDuration = ({ from, to }: Period) =>
+  formatDuration(diffMonths(from, to || new Date()))
 
 const periodYears = (period: Period) => {
   const { from, to } = period
-  return [
-    from.getFullYear(),
-    to?.getFullYear() !== from.getFullYear() && to?.getFullYear(),
-  ].filter(Boolean).join(' - ')
+  return [from.getFullYear(), to?.getFullYear() !== from.getFullYear() && to?.getFullYear()]
+    .filter(Boolean)
+    .join(' - ')
 }
 
 function App() {
@@ -52,24 +54,27 @@ function App() {
     <div className={styles.root}>
       <h1>{resume.position}</h1>
       <h2>{resume.name}</h2>
-      <p>{birthday(resume.birthday)}</p>
+      {/* <p>{birthday(resume.birthday)}</p> */}
       <div className={styles.col2}>
         <div className={styles.hello}>
           <h2>Привет! 👋</h2>
-          {resume.hello.map(i => <div>{i}</div>)}
+          {resume.hello.map(i => (
+            <div>{i}</div>
+          ))}
         </div>
         <div className={styles.contacts}>
           <h2>Контакты</h2>
-          {resume.contacts
-            .map(contact => (
-              <div className={styles.contact}>
-                <a href={contact.link} target="_blank">
-                  <div className={styles.icon}>{contact.icon}</div>
-                  <div className={styles.value}>{contact.value}</div>
-                </a>
-              </div>
-            ))
-          }
+          {resume.contacts.map(contact => (
+            <div className={styles.contact}>
+              <a
+                href={contact.link}
+                target="_blank"
+              >
+                <div className={styles.icon}>{contact.icon}</div>
+                <div className={styles.value}>{contact.value}</div>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
       <h2>Навыки</h2>
@@ -84,41 +89,41 @@ function App() {
 
       <h2>
         Опыт работы
-        <div className={clsx(styles.code, styles.total)}>
-          {experience(resume.experiences)}
-        </div>
+        <div className={clsx(styles.code, styles.total)}>{experience(resume.experiences)}</div>
       </h2>
-      {
-        resume.experiences.map(work => (
-          <section className={styles.work}>
-            <h3 className={styles.name}>{work.name}</h3>
-            <div className={styles.position}>{work.position}</div>
-            <div className={styles.description}>{work.description}</div>
-            <h3 className={styles.period}>{periodMonths(work.period)}</h3>
-            <div className={clsx(styles.code, styles.duration)}>{periodformatDuration(work.period)}</div>
-            <h3>Обязанности</h3>
-            <ul>
-              {work.responsibilities.map(responsibility => (<li>{responsibility}</li>))}
-            </ul>
-            <h3>Достижения</h3>
-            <ul>
-              {work.achivements.map(achivement => (<li>{achivement}</li>))}
-            </ul>
-            <h3>Технологии</h3>
-            {work.stack.join(', ')}
-            <h3>Проекты</h3>
-            <ul>
-              {
-                work.projects.map(project => (
-                  <li>
-                    <b>{project.name}</b> - {project.value}
-                  </li>
-                ))
-              }
-            </ul>
-          </section>
-        ))
-      }
+      {resume.experiences.map(work => (
+        <section className={styles.work}>
+          <h3 className={styles.name}>{work.name}</h3>
+          <div className={styles.position}>{work.position}</div>
+          <div className={styles.description}>{work.description}</div>
+          <h3 className={styles.period}>{periodMonths(work.period)}</h3>
+          <div className={clsx(styles.code, styles.duration)}>
+            {periodformatDuration(work.period)}
+          </div>
+          <h3>Обязанности</h3>
+          <ul>
+            {work.responsibilities.map(responsibility => (
+              <li>{responsibility}</li>
+            ))}
+          </ul>
+          <h3>Достижения</h3>
+          <ul>
+            {work.achivements.map(achivement => (
+              <li>{achivement}</li>
+            ))}
+          </ul>
+          <h3>Технологии</h3>
+          {work.stack.join(', ')}
+          <h3>Проекты</h3>
+          <ul>
+            {work.projects.map(project => (
+              <li>
+                <b>{project.name}</b> - {project.value}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
       <h2>Образование</h2>
       <ul>
         {resume.educations.map(({ period, link, value }) => (
@@ -144,9 +149,11 @@ function App() {
             <a href={publication.link}>{publication.value}</a>
           </li>
         ))}
-      </ul>     
+      </ul>
       <h2>О себе</h2>
-      {resume.about.split('\n').map(i => <p>{i}</p>)}
+      {resume.about.split('\n').map(i => (
+        <p>{i}</p>
+      ))}
     </div>
   )
 }
