@@ -1,19 +1,18 @@
 import clsx from 'clsx'
-
 import styles from 'src/index.module.scss'
 import resume from 'src/resume/boris.yuzhakov'
-import { Resume, Period } from 'src/types'
-import { declOfNum, diffMonths, formatDuration } from 'src/utils'
+import type { Period, Resume } from 'src/types'
+import { /*declOfNum,*/ diffMonths, formatDuration } from 'src/utils'
 
-const birthday = (value: Date) => {
-  const diff = Math.abs(new Date(Date.now() - value.getTime()).getUTCFullYear() - 1970)
-  return (
-    <div>
-      {new Intl.DateTimeFormat('ru').format(value)} ({diff}{' '}
-      {declOfNum(diff, ['год', 'года', 'лет'])})
-    </div>
-  )
-}
+// const birthday = (value: Date) => {
+//   const diff = Math.abs(new Date(Date.now() - value.getTime()).getUTCFullYear() - 1970)
+//   return (
+//     <div>
+//       {new Intl.DateTimeFormat('ru').format(value)} ({diff}{' '}
+//       {declOfNum(diff, ['год', 'года', 'лет'])})
+//     </div>
+//   )
+// }
 
 const experience = (periods: Resume['experiences']) => {
   let months = 0
@@ -58,14 +57,17 @@ function App() {
       <div className={styles.col2}>
         <div className={styles.hello}>
           <h2>Привет! 👋</h2>
-          {resume.hello.map(i => (
-            <div>{i}</div>
+          {resume.hello.map((i, index) => (
+            <div key={index}>{i}</div>
           ))}
         </div>
         <div className={styles.contacts}>
           <h2>Контакты</h2>
           {resume.contacts.map(contact => (
-            <div className={styles.contact}>
+            <div
+              key={contact.key}
+              className={styles.contact}
+            >
               <a
                 href={contact.link}
                 target="_blank"
@@ -81,7 +83,10 @@ function App() {
       <p>{resume.skills.join(', ')}</p>
       <h2>Языки</h2>
       {resume.languages.map(language => (
-        <div className={styles.language}>
+        <div
+          className={styles.language}
+          key={language.key}
+        >
           <div className={styles.name}>{language.name}</div>
           <div className={styles.value}>{language.value}</div>
         </div>
@@ -92,7 +97,10 @@ function App() {
         <div className={clsx(styles.code, styles.total)}>{experience(resume.experiences)}</div>
       </h2>
       {resume.experiences.map(work => (
-        <section className={styles.work}>
+        <section
+          key={work.key}
+          className={styles.work}
+        >
           <h3 className={styles.name}>{work.name}</h3>
           <div className={styles.position}>{work.position}</div>
           <div className={styles.description}>{work.description}</div>
@@ -102,14 +110,14 @@ function App() {
           </div>
           <h3>Обязанности</h3>
           <ul>
-            {work.responsibilities.map(responsibility => (
-              <li>{responsibility}</li>
+            {work.responsibilities.map((responsibility, index) => (
+              <li key={index}>{responsibility}</li>
             ))}
           </ul>
           <h3>Достижения</h3>
           <ul>
-            {work.achivements.map(achivement => (
-              <li>{achivement}</li>
+            {work.achivements.map((achivement, index) => (
+              <li key={index}>{achivement}</li>
             ))}
           </ul>
           <h3>Технологии</h3>
@@ -117,7 +125,7 @@ function App() {
           <h3>Проекты</h3>
           <ul>
             {work.projects.map(project => (
-              <li>
+              <li key={project.key}>
                 <b>{project.name}</b> - {project.value}
               </li>
             ))}
@@ -127,7 +135,10 @@ function App() {
       <h2>Образование</h2>
       <ul>
         {resume.educations.map(({ period, link, value }) => (
-          <li className={styles.edu}>
+          <li
+            key={link}
+            className={styles.edu}
+          >
             <div className={styles.period}>{periodYears(period)}</div>
             <a href={link}>{value}</a>
           </li>
@@ -136,7 +147,10 @@ function App() {
       <h2>Курсы</h2>
       <ul>
         {resume.courses.map(({ period, link, value }) => (
-          <li className={styles.edu}>
+          <li
+            key={link}
+            className={styles.edu}
+          >
             <div className={styles.period}>{periodYears(period)}</div>
             <a href={link}>{value}</a>
           </li>
@@ -145,14 +159,17 @@ function App() {
       <h2>Публикации</h2>
       <ul>
         {resume.publications.map(publication => (
-          <li className={styles.publication}>
+          <li
+            key={publication.link}
+            className={styles.publication}
+          >
             <a href={publication.link}>{publication.value}</a>
           </li>
         ))}
       </ul>
       <h2>О себе</h2>
       {resume.about.split('\n').map(i => (
-        <p>{i}</p>
+        <p key={i}>{i}</p>
       ))}
     </div>
   )

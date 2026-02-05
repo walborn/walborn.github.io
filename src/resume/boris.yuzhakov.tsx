@@ -6,19 +6,18 @@ import TelegramSVG from 'src/assets/contacts/telegram.svg'
 import styles from 'src/index.module.scss'
 import type { Resume } from 'src/types'
 
-{
-  /* eslint-disable max-len */
-}
+/* eslint-disable max-len */
 const resume: Resume = {
   position: 'Frontend developer | React',
   name: 'Южаков Борис',
-  // birthday: new Date(1986, 9, 29),
+  birthday: new Date(1986, 9, 29),
   hello: [
     'Я во фронте больше 9 лет. Фанат React и TS. Работал в различных компаниях, от стартапа до большого продукта. Писал приложения под большую нагрузку и быстрый time to market.',
     'Постоянно держу себя в форме и изучаю современные технологии. Хорошо владею английским. Веду блог на хабре и в телеграмме.',
   ],
   contacts: [
     {
+      key: 'email',
       name: 'email',
       icon: (
         <img
@@ -31,6 +30,7 @@ const resume: Resume = {
       link: 'mailto:yuzhakov.boris@gmail.com',
     },
     {
+      key: 'telegram',
       name: 'telegram',
       icon: (
         <img
@@ -43,6 +43,7 @@ const resume: Resume = {
       link: 'https://t.me/codebor',
     },
     {
+      key: 'linkedin',
       name: 'linkedin',
       icon: (
         <img
@@ -55,6 +56,7 @@ const resume: Resume = {
       link: 'https://linkedin.com/in/codebor',
     },
     {
+      key: 'github',
       name: 'github',
       icon: (
         <img
@@ -67,6 +69,7 @@ const resume: Resume = {
       link: 'https://github.com/walborn',
     },
     {
+      key: 'phone',
       name: 'phone',
       icon: (
         <img
@@ -100,6 +103,7 @@ const resume: Resume = {
   ],
   languages: [
     {
+      key: 'en',
       name: 'Английский 🇬🇧',
       value: (
         <div>
@@ -110,6 +114,7 @@ const resume: Resume = {
   ],
   experiences: [
     {
+      key: 'latech',
       name: <a href="https://latech.ru">Lamoda Tech</a>,
       description: 'HR Tech подразделение компании Lamoda',
       position: 'Старший разработчик категории 1',
@@ -140,12 +145,13 @@ const resume: Resume = {
         'Storybook',
       ],
       projects: [
-        { name: 'Lanet', value: 'Интранет' },
-        { name: 'Talent Management System (TMS)', value: 'Ревью сотрудников' },
-        { name: 'Resource Risk', value: 'Внутренняя аналитика для эйчаров' },
+        { key: 'lanet', name: 'Lanet', value: 'Интранет' },
+        { key: 'tms', name: 'Talent Management System (TMS)', value: 'Ревью сотрудников' },
+        { key: 'resource-risk', name: 'Resource Risk', value: 'Внутренняя аналитика для эйчаров' },
       ],
     },
     {
+      key: 'yandexfood',
       name: <a href="https://eda.yandex.ru/">Yandex</a>,
       description: 'Международная Яндекс Еда',
       position: 'Старший разработчик интерфейсов',
@@ -163,6 +169,7 @@ const resume: Resume = {
       stack: ['TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook'],
       projects: [
         {
+          key: 'menuam',
           name: (
             <a
               href="https://menu.am/"
@@ -175,6 +182,7 @@ const resume: Resume = {
           value: 'Яндекс еда для Бразилии',
         },
         {
+          key: 'express24',
           name: (
             <a
               href="https://express24.uz/"
@@ -186,11 +194,16 @@ const resume: Resume = {
           ),
           value: 'Яндекс еда в Узбекистане',
         },
-        { name: 'Yandex Food', value: 'Яндекс еда для Грузии' },
-        { name: 'Yango', value: 'Встроенная Яндекс еда в приложение аналог yandex.go для Африки' },
+        { key: 'georgia', name: 'Yandex Food', value: 'Яндекс еда для Грузии' },
+        {
+          key: 'yango',
+          name: 'Yango',
+          value: 'Встроенная Яндекс еда в приложение аналог yandex.go для Африки',
+        },
       ],
     },
     {
+      key: 'sibur',
       name: <a href="https://www.sibur.digital/">Sibur Digital</a>,
       description:
         'Дочка нефтехимической компании Sibur. Создаёт бизнес решения, используя машинное обучение',
@@ -203,7 +216,7 @@ const resume: Resume = {
         'Проведение интервью',
       ],
       achivements: [
-        <div>
+        <div key="achivement-launch-2">
           Запустил с нуля два успешных проекта <s>и один неуспешный</s>
         </div>,
         'Затащил Vite во все проекты, сильно ускорив работу приложений',
@@ -212,11 +225,13 @@ const resume: Resume = {
       stack: ['TS', 'ReactJS', 'Redux Toolkit', 'Vite', 'Jest', 'Storybook'],
       projects: [
         {
+          key: 'kalancha',
           name: 'kalancha',
           value:
             'сервис нотификации, который слушает события из кафки, анализирует их и, в случае проблем, отправляет пользователю сообщения через различные каналы (sms, email, jira)',
         },
         {
+          key: 'mlfw',
           name: 'mlfw',
           value:
             '(Machine Learning FrameWork) - веб интерфейс для API, который помогает управляться с моделями машинного обучения (просмотр, история, создание, загрузка, запуск, удаление и т. д.)',
@@ -224,6 +239,7 @@ const resume: Resume = {
       ],
     },
     {
+      key: 'altarix',
       name: <a href="https://www.linkedin.com/company/altarix/">Altarix</a>,
       description: 'Компания, занимающаяся городскими сервисами, использующими BigData',
       position: 'Frontend teamlead',
@@ -251,8 +267,8 @@ const resume: Resume = {
         'Storybook',
       ],
       projects: [
-        { name: 'pcs', value: 'Сервис персональных коммуникаций (email, sms, web)' },
-        { name: 'lendings', value: 'Различного рода лендинги' },
+        { key: 'pcs', name: 'pcs', value: 'Сервис персональных коммуникаций (email, sms, web)' },
+        { key: 'lendings', name: 'lendings', value: 'Различного рода лендинги' },
       ],
     },
   ],

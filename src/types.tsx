@@ -1,19 +1,21 @@
-import React from 'react'
+import type React from 'react'
 
 export type Period = {
   from: Date
   to?: Date
 }
 type Project = {
-  name: string
+  key: string
+  name: React.ReactNode
   value: string
 }
 
 type Experience = {
+  key: string
   name: React.ReactNode
   description: React.ReactNode
   position: string
-  period: Period,
+  period: Period
   responsibilities: string[]
   achivements: React.ReactNode[]
   stack: string[]
@@ -35,9 +37,15 @@ export interface Resume {
   name: string
   birthday: Date
   hello: React.ReactNode[]
-  contacts: { name: string, value: string, link: string, icon: React.ReactNode }[]
+  contacts: {
+    key: string
+    name: React.ReactNode
+    value: string
+    link: string
+    icon: React.ReactNode
+  }[]
   skills: string[]
-  languages: { name: React.ReactNode, value: React.ReactNode }[]
+  languages: { key: string; name: React.ReactNode; value: React.ReactNode }[]
   experiences: Experience[]
   educations: Education[]
   courses: Education[]
